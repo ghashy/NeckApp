@@ -88,15 +88,22 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
 	endif(CMAKE_BUILD_TYPE MATCHES Debug)
 endif()
 
-# Add godot-cpp directory
-#add_subdirectory("${CPP_BINDINGS_PATH}" "${CPP_BINDINGS_PATH}/bin")
-#set_target_properties(godot-cpp PROPERTIES
-#	LIBRARY_OUTPUT_DIRECTORY ${BUILD_PATH}
-#)
-add_library(godot-cpp OBJECT IMPORTED)
-set_target_properties(godot-cpp PROPERTIES
-  IMPORTED_OBJECTS   "${CMAKE_CURRENT_SOURCE_DIR}/../godot-cpp/bin/libgodot-cpp.macos.template_debug.universal.a"
-)
+# TOGGLE THIS IF YOU WANT TO COMPILE GODOT-CPP WITH CMAKE
+set(is_cmake OFF)
+
+if (${is_cmake})
+	# Add godot-cpp directory
+	add_subdirectory("${CPP_BINDINGS_PATH}" "${CPP_BINDINGS_PATH}/bin")
+	set_target_properties(godot-cpp PROPERTIES
+		LIBRARY_OUTPUT_DIRECTORY ${BUILD_PATH}
+	)
+else()
+	add_library(godot-cpp OBJECT IMPORTED)
+	set_target_properties(godot-cpp PROPERTIES
+	IMPORTED_OBJECTS   "${CMAKE_CURRENT_SOURCE_DIR}/../godot-cpp/bin/libgodot-cpp.macos.template_debug.universal.a"
+	)
+endif()
+
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../ChordDetector "${CMAKE_CURRENT_SOURCE_DIR}/../ChordDetector/build")
 
 # Get Sources
