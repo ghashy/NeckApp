@@ -1,0 +1,129 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0luvdo88f4hi"]
+
+[ext_resource type="Theme" uid="uid://ltfmta4yx5om" path="res://Resources/Themes/GeneralTheme.tres" id="1_wmj4a"]
+[ext_resource type="Script" path="res://Scenes/SettingsWindow/Workspace.gd" id="2_eovdi"]
+
+[node name="SettingsWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Workspace" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wmj4a")
+script = ExtResource("2_eovdi")
+
+[node name="VBox" type="VBoxContainer" parent="Workspace"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Separator" type="Control" parent="Workspace/VBox"]
+custom_minimum_size = Vector2(2.08165e-12, 150)
+layout_mode = 2
+
+[node name="ToggleAudioFX" type="CheckButton" parent="Workspace/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Enable audio FX"
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ToggleInput" type="CheckButton" parent="Workspace/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Enable audio input"
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="IsModernNaming" type="CheckButton" parent="Workspace/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Enable modern chord-naming style"
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsList" type="ItemList" parent="Workspace/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+auto_height = true
+item_count = 4
+item_0/text = "Audio driver"
+item_1/text = "Output device"
+item_2/text = "Input device"
+item_3/text = "Sample rate"
+
+[node name="HBox" type="HBoxContainer" parent="Workspace/VBox/SettingsList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Empty" type="Control" parent="Workspace/VBox/SettingsList/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="Workspace/VBox/SettingsList/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AudioDriver" type="LineEdit" parent="Workspace/VBox/SettingsList/HBox/VBox"]
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Empty" type="Control" parent="Workspace/VBox/SettingsList/HBox/VBox"]
+custom_minimum_size = Vector2(2.08165e-12, 8)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="AudioOutput" type="OptionButton" parent="Workspace/VBox/SettingsList/HBox/VBox"]
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+metadata/_edit_use_anchors_ = true
+
+[node name="Empty2" type="Control" parent="Workspace/VBox/SettingsList/HBox/VBox"]
+custom_minimum_size = Vector2(2.08165e-12, 15)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="AudioInput" type="OptionButton" parent="Workspace/VBox/SettingsList/HBox/VBox"]
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+metadata/_edit_use_anchors_ = true
+
+[node name="Empty3" type="Control" parent="Workspace/VBox/SettingsList/HBox/VBox"]
+custom_minimum_size = Vector2(2.08165e-12, 8)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="SampleRate" type="LineEdit" parent="Workspace/VBox/SettingsList/HBox/VBox"]
+custom_minimum_size = Vector2(2.08165e-12, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+alignment = 1
+metadata/_edit_use_anchors_ = true

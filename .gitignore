@@ -1,0 +1,5 @@
+**/build/
+**/GeneralTheme.tres
+**/.DS_Store
+**/.cache/
+**/.godot/
