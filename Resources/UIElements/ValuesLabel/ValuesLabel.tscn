@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct0mmil2w588m"]
+
+[ext_resource type="Theme" uid="uid://ltfmta4yx5om" path="res://Resources/Themes/GeneralTheme.tres" id="1_ixy3k"]
+[ext_resource type="Script" path="res://Resources/UIElements/ValuesLabel/ValuesLabel.gd" id="1_mcpkt"]
+
+[node name="ValuesLabel" type="Control"]
+layout_mode = 3
+anchor_left = 0.26
+anchor_top = 0.334259
+anchor_right = 0.74
+anchor_bottom = 0.469
+theme = ExtResource("1_ixy3k")
+script = ExtResource("1_mcpkt")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Left" type="Label" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 150
+horizontal_alignment = 1
+
+[node name="Colon" type="Label" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 150
+text = ":"
+horizontal_alignment = 1
+
+[node name="Right" type="Label" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 150
+horizontal_alignment = 1

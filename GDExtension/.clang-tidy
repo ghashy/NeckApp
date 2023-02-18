@@ -1,0 +1,1 @@
+Checks: '-*,misc-*,llvm-*,clang-analyzer-*,cert-*,bugprone-*,-bugprone-easily-swappable-parameters*,cppcoreguidelines-*,modernize-*,-modernize-use-trailing-return-type*,performance-*,readability-*,objc-*'

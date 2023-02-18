@@ -1,4 +1,4 @@
 {
-    "cmake.sourceDirectory": "${workspaceFolder}/CppExtension/source",
-    "cmake.buildDirectory": "${workspaceFolder}/CppExtension/build"
+    "cmake.sourceDirectory": "${workspaceFolder}/GDExtension",
+    "cmake.buildDirectory": "${workspaceFolder}/GDExtension/build"
 }

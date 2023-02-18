@@ -1,0 +1,101 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "scons mac universal debug",
+            "type": "shell",
+            "command": "scons",
+            "options": {
+                "cwd": "${workspaceFolder}/GDExtension/godot-cpp"
+            },
+            "args": [
+                "-j7",
+                "target=template_debug",
+                "platform=macos",
+                "arch=universal",
+                "optimize=debug",
+                "dev_build=yes",
+                "macos_deployment_target=10.12"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "scons ios arm64 debug",
+            "type": "shell",
+            "command": "scons",
+            "options": {
+                "cwd": "${workspaceFolder}/GDExtension/godot-cpp"
+            },
+            "args": [
+                "-j7",
+                "target=template_debug",
+                "platform=ios",
+                "arch=arm64",
+                "optimize=debug",
+                "dev_build=yes",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "scons android arm64v8 debug",
+            "type": "shell",
+            "command": "scons",
+            "options": {
+                "cwd": "${workspaceFolder}/GDExtension/godot-cpp"
+            },
+            "args": [
+                "-j7",
+                "target=template_debug",
+                "platform=android",
+                "android_api_level=23",
+                "arch=arm64",
+                "optimize=debug",
+                "dev_build=yes",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "scons clean",
+            "type": "shell",
+            "command": "scons",
+            "options": {
+                "cwd": "${workspaceFolder}/GDExtension/godot-cpp"
+            },
+            "args": [
+                "-c"
+            ]
+        },
+        {
+            "label": "cppcheck",
+            "group": "build",
+            "type": "shell",
+            "command": "cppcheck --template=gcc --enable=warning --std=c++14 --force --project=compile_commands.json",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "problemMatcher": {
+                "fileLocation": "absolute",
+                "severity": "warning",
+                "pattern": {
+                    "regexp": "^(.*?):(\\d+):(\\d*):?\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        }
+    ]
+}
