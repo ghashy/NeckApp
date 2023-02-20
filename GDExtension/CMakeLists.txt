@@ -11,16 +11,15 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 # Macos variables
-if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-    set(CMAKE_OSX_ARCHITECTURES "arm64" "x86_64")
-    set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12")
-endif()
+set(CMAKE_OSX_ARCHITECTURES "arm64" "x86_64")
+set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12")
 # Ios variables
 set(PLATFORM ${iosplatform})
 set(ENABLE_BITCODE OFF)
 # Android variables
 set(ANDROID_ABI ${androidcpu})
 set(ANDROID_PLATFORM ${androidplatform})
+set(ANDROID_STL "c++_shared")
 
 # All variables should be defined before project() function
 project(lib_neck VERSION 1.1 LANGUAGES CXX C)
@@ -53,7 +52,7 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "iOS")
 endif()
 
 # Define godot bindings filename
-set(godot_obj libgodot-cpp.${host}.template_${buildtype}.dev.${cpuname}.a)
+set(godot_obj libgodot-cpp.${host}.template_${buildtype}.${cpuname}.a)
 # Define godot bindings
 add_library(godot_lib STATIC OBJECT IMPORTED)
 set_target_properties(godot_lib PROPERTIES

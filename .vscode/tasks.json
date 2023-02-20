@@ -16,7 +16,6 @@
                 "platform=macos",
                 "arch=universal",
                 "optimize=debug",
-                "dev_build=yes",
                 "macos_deployment_target=10.12"
             ],
             "group": {
@@ -37,7 +36,6 @@
                 "platform=ios",
                 "arch=arm64",
                 "optimize=debug",
-                "dev_build=yes",
             ],
             "group": {
                 "kind": "build",
@@ -58,7 +56,26 @@
                 "android_api_level=23",
                 "arch=arm64",
                 "optimize=debug",
-                "dev_build=yes",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "scons android arm64v8 release",
+            "type": "shell",
+            "command": "scons",
+            "options": {
+                "cwd": "${workspaceFolder}/GDExtension/godot-cpp"
+            },
+            "args": [
+                "-j7",
+                "target=template_release",
+                "platform=android",
+                "android_api_level=23",
+                "arch=arm64",
+                "optimize=speed",
             ],
             "group": {
                 "kind": "build",

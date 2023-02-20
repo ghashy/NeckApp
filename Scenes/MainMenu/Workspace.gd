@@ -37,8 +37,7 @@ var cur_chord_idx: int
 @onready var complexity_level: Control = $ComplexityLevel
 @onready var current_key: Label = $CurrentKey
 @onready var tween: Tween
-@onready var countdown: PackedScene = \
-	load("res://Resources/UIElements/CountDown/CountDown.tscn")
+@onready var countdown: PackedScene = load("res://Resources/UIElements/CountDown/CountDown.tscn")
 @onready var generator: Neck = Neck.new()
 
 func _ready() -> void:
