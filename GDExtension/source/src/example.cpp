@@ -3,13 +3,13 @@
  * This is free and unencumbered software released into the public domain.
  */
 
-#include "example.h"
 
 #include <godot_cpp/core/class_db.hpp>
-
 #include <godot_cpp/classes/global_constants.hpp>
 #include <godot_cpp/classes/label.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
+
+#include "example.h"
 
 using namespace godot;
 

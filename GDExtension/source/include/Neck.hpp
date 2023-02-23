@@ -8,19 +8,21 @@
 #ifndef NECK_HPP
 #define NECK_HPP
 
-#include "Chord.hpp"
-#include "godot_cpp/variant/dictionary.hpp"
 #include <algorithm>
 #include <chrono>
+#include <random>
+#include <sstream>
+#include <string>
+#include <vector>
+
+#include "godot_cpp/variant/dictionary.hpp"
 #include <godot_cpp/classes/ref.hpp>
 #include <godot_cpp/classes/ref_counted.hpp>
 #include <godot_cpp/core/binder_common.hpp>
 #include <godot_cpp/variant/packed_int32_array.hpp>
 #include <godot_cpp/variant/typed_array.hpp>
-#include <random>
-#include <sstream>
-#include <string>
-#include <vector>
+
+#include "Chord.hpp"
 
 class Neck : public godot::RefCounted {
     private:

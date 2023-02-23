@@ -17,7 +17,6 @@
 #include <godot_cpp/classes/control.hpp>
 #include <godot_cpp/classes/global_constants.hpp>
 #include <godot_cpp/classes/viewport.hpp>
-
 #include <godot_cpp/core/binder_common.hpp>
 
 using namespace godot;

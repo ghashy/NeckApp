@@ -9,14 +9,16 @@
 #ifndef CHORD_HPP
 #define CHORD_HPP
 
-#include "ChordDetector.h"
-#include "godot_cpp/classes/ref_counted.hpp"
 #include <algorithm>
+#include <vector>
+
+#include "godot_cpp/classes/ref_counted.hpp"
 #include <godot_cpp/classes/wrapped.hpp>
 #include <godot_cpp/core/binder_common.hpp>
 #include <godot_cpp/variant/string.hpp>
 #include <godot_cpp/variant/string_name.hpp>
-#include <vector>
+
+#include "ChordDetector.h"
 
 class HearableChord;
 

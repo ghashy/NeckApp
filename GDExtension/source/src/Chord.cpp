@@ -6,15 +6,17 @@
  Created by Ghashy, 2023.
 */
 
-#include "Chord.hpp"
-#include <ChordInfo.hpp>
+#include <stdexcept>
+#include <string>
+
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/object.hpp>
 #include <godot_cpp/core/property_info.hpp>
 #include <godot_cpp/variant/string.hpp>
 #include <godot_cpp/variant/variant.hpp>
-#include <stdexcept>
-#include <string>
+
+#include "Chord.hpp"
+#include <ChordInfo.hpp>
 
 void TargetChord::_bind_methods() {
     using namespace godot;

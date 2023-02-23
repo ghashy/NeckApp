@@ -4,10 +4,11 @@
  *
  * Created by Ghashy.
  */
+ 
+#include <godot_cpp/variant/utility_functions.hpp>
 
 #include "ChordInfo.hpp"
 #include <Chord.hpp>
-#include <godot_cpp/variant/utility_functions.hpp>
 
 using namespace godot;
 

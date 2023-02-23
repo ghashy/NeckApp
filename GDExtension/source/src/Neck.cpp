@@ -5,16 +5,18 @@
  * Created by Ghashy.
  */
 
-#include "Neck.hpp"
+#include <stdexcept>
+#include <vector>
+
 #include "godot_cpp/core/class_db.hpp"
 #include "godot_cpp/variant/dictionary.hpp"
 #include "godot_cpp/variant/utility_functions.hpp"
-#include <Chord.hpp>
 #include <godot_cpp/classes/object.hpp>
 #include <godot_cpp/classes/ref.hpp>
 #include <godot_cpp/variant/typed_array.hpp>
-#include <stdexcept>
-#include <vector>
+
+#include "Neck.hpp"
+#include <Chord.hpp>
 
 godot::Ref<TargetChord> make_ref(TargetChord);
 
