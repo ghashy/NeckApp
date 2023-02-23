@@ -1,6 +1,7 @@
-//
-// tests.h
-//
+/* godot-cpp integration testing project.
+ *
+ * This is free and unencumbered software released into the public domain.
+ */
 
 #ifndef TESTS_H
 #define TESTS_H
