@@ -147,14 +147,17 @@ func start_exercise() -> void:
 	run_cycle()
 
 func run_cycle() -> void:
+	print("NOW WE ARE AT THE BEGINNING OF RUN_CYCLE, KEYS: ", keys)
 	# Rules of exiting from cycle
 	if iter_cur >= iter_max and cur_key_idx < keys.size() - 1:
 		cur_key_idx += 1
 		iter_cur = 0
+		print("GO TO NEXT KEY WITH INDEX: ", cur_key_idx)
 	elif iter_cur >= iter_max and cur_key_idx >= keys.size() - 1:
 		execute_finish()
 		return
 	iter_cur += 1
+	print("CURRENT ITERATION: ", iter_cur)
 
 	#Set chords counter to zero
 	cur_chord_idx = 0
@@ -162,6 +165,7 @@ func run_cycle() -> void:
 	# Values cycle
 	var values: Dictionary = generator.get_values()
 	values_label.set_values(values)
+	print("CURRENT VALUES:", values)
 
 	# Update scene views, before next iteration
 	chord_view.hide()

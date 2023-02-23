@@ -14,27 +14,27 @@ static func get_keys_for_cpp() -> Array[int]:
 	for key in from:
 		if key == "C" and from[key] == true:
 			result.push_back(0)
-		if key == "C#" and from[key] == true:
+		if key == "C♯" and from[key] == true:
 			result.push_back(1)
 		if key == "D" and from[key] == true:
 			result.push_back(2)
-		if key == "D#" and from[key] == true:
+		if key == "D♯" and from[key] == true:
 			result.push_back(3)
 		if key == "E" and from[key] == true:
 			result.push_back(4)
 		if key == "F" and from[key] == true:
 			result.push_back(5)
-		if key == "F#" and from[key] == true:
+		if key == "F♯" and from[key] == true:
 			result.push_back(6)
 		if key == "G" and from[key] == true:
 			result.push_back(7)
-		if key == "G#" and from[key] == true:
+		if key == "G♯" and from[key] == true:
 			result.push_back(8)
 		if key == "A" and from[key] == true:
 			result.push_back(9)
-		if key == "B" and from[key] == true:
+		if key == "B♭" and from[key] == true:
 			result.push_back(10)
-		if key == "H" and from[key] == true:
+		if key == "B" and from[key] == true:
 			result.push_back(11)  
 	return result
 
