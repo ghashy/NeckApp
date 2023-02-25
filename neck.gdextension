@@ -5,9 +5,7 @@ entry_symbol = "neck_app_library_init"
 [libraries]
 
 macos.debug = "res://GDExtension/products/lib_neck.macos.debug.universal.framework"
-macos.release = "res://../CppExtension/build/Products/macos/lib.osx.template_release.framework"
-ios.debug = "res://../CppExtension/build/Products/macos/lib.osx.template_debug.framework"
-ios.release = "res://../CppExtension/build/Products/macos/lib.osx.template_release.framework"
+ios.debug = "res://GDExtension/products/lib_neck.ios.debug.arm64.framework"
 windows.debug.x86_32 = "res://bin/libgdexample.windows.template_debug.x86_32.dll"
 windows.release.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
 windows.debug.x86_64 = "res://bin/libgdexample.windows.template_debug.x86_64.dll"
