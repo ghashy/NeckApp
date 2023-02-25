@@ -69,6 +69,7 @@ set(include "source/include")
 add_library(${PROJECT_NAME} SHARED ${sources})
 set_target_properties(${PROJECT_NAME} PROPERTIES
     FRAMEWORK TRUE
+    MACOSX_FRAMEWORK_IDENTIFIER "com.ghashy.necklib"
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/products"
     ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/products"
     OUTPUT_NAME ${PROJECT_NAME}.${host}.${buildtype}.${cpuname}
