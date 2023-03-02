@@ -2,7 +2,7 @@
 
 [sub_resource type="AudioEffectCapture" id="AudioEffectCapture_y6suo"]
 resource_name = "Capture"
-buffer_length = 4.15
+buffer_length = 2.06
 
 [resource]
 bus/0/volume_db = -0.328256

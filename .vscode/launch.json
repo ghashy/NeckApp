@@ -18,7 +18,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "/Users/egor/Documents/GodotDebug/Godot.app/Contents/MacOS/Godot",
+			"program": "/Users/egor/GodotDebug/Godot.app/Contents/MacOS/Godot",
 			"args": [],
 			"cwd": "${workspaceFolder}",
 		}

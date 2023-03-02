@@ -4,7 +4,7 @@
  *
  * Created by Ghashy.
  */
- 
+
 #include <godot_cpp/variant/utility_functions.hpp>
 
 #include "ChordInfo.hpp"
@@ -39,18 +39,18 @@ bool ChordInfo::calculate_result(godot::PackedVector2Array buffer, int samples_c
     vector<double> frame(frame_size);
     TargetChord heared {};
 
-    // We skip if silence
-    int size = 0;
-    for (int i = 0; i < samples_count; i++) {
-        if (buffer[i].x == 0.0) continue;
-        size++;
+    // Skip all 0.0 values in buffer
+    vector<double> std_buffer;
+    for (godot::Vector2 element : buffer) {
+        if (std_buffer.size() == 0.0 and element.x == 0.0) continue;
+        std_buffer.push_back(element.x);
     }
-    if (size < samples_count-5000) return false;
-    // Hearing
-    for (int j = 0; j < samples_count; j += frame_size) {
+
+    //Hearing
+    for (int j = 0; j < std_buffer.size(); j += frame_size) {
         for (int i = 0; i < frame_size; i++) {
-            if (i + j >= samples_count) break;
-            frame[i] = buffer[i + j].x;
+            if (i + j >= std_buffer.size()) break;
+            frame[i] = std_buffer[i + j];
         }
         chroma.processAudioFrame(frame);
         if (chroma.isReady()) {

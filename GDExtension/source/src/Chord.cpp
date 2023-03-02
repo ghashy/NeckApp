@@ -27,7 +27,6 @@ ADD_PROPERTY(godot::PropertyInfo(godot::Variant::STRING, "chord_name"), "set_cho
              "get_chord_name");
 }
 
-
 TargetChord& TargetChord::init(MusKey key, MusKey root, ChordList chord_p, bool is_modern_naming) {
     // For define chord's name.
     chord_key
@@ -128,6 +127,8 @@ TargetChord& TargetChord::init(MusKey key, MusKey root, ChordList chord_p, bool 
     return *this;
 }
 
+//----------------------------------------------------------------------------------------------
+
 TargetChord& TargetChord::init(const TargetChord& target_chord) {
     this->chord_key = target_chord.chord_key;
     this->chord = target_chord.chord;
@@ -135,6 +136,8 @@ TargetChord& TargetChord::init(const TargetChord& target_chord) {
     this->chord_name = target_chord.chord_name;
     return *this;
 }
+
+//----------------------------------------------------------------------------------------------
 
 godot::String set_letters_case(godot::String result, TargetChord::ChordList chord) {
     switch (chord) {
@@ -202,8 +205,6 @@ godot::String TargetChord::get_key(MusKey key, MusKey root, ChordList chord) {
     }
     return set_letters_case(result, chord);
 }
-
-// Amature tonalities: C, C♯, D, D♯, E, F, F♯, G, G♯, A, B♭, B
 
 godot::String TargetChord::get_amature_key(MusKey key, MusKey root, ChordList chord) {
     using godot::String;

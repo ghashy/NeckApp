@@ -92,20 +92,15 @@ void Example::_get_property_list(List<PropertyInfo> *p_list) const {
 }
 
 bool Example::_property_can_revert(const StringName &p_name) const {
-	if (p_name == StringName("property_from_list") && property_from_list != Vector3(42, 42, 42)) {
-		return true;
-	} else {
-		return false;
-	}
+	return p_name == StringName("property_from_list") && property_from_list != Vector3(42, 42, 42);
 };
 
 bool Example::_property_get_revert(const StringName &p_name, Variant &r_property) const {
 	if (p_name == StringName("property_from_list")) {
 		r_property = Vector3(42, 42, 42);
 		return true;
-	} else {
-		return false;
 	}
+	return false;
 };
 
 void Example::_bind_methods() {

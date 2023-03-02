@@ -72,6 +72,7 @@ func toggle_fx() -> void:
 func toggle_modern_naming_style() -> void:
 	GlobalSettings.is_modern = enable_modern_naming.is_pressed()
 	GlobalSettings.save_settings()
+
 func save_driver_name(new_name: String) -> void:
 	ProjectSettings.set_setting("audio/driver/driver", new_name)
 	GlobalSettings.save_project()

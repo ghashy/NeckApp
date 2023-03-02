@@ -25,6 +25,7 @@ void Neck::_bind_methods() {
     godot::ClassDB::bind_method(godot::D_METHOD("get_chords", "key", "is_modern_naming"),
                                 &Neck::get_chords);
 }
+
 // SORRY FOR THIS FUNCTION :)
 godot::Array Neck::get_chords(int key_p, bool is_modern_naming) {
     // No chords on second string
