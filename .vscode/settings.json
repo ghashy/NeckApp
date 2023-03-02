@@ -1,4 +1,5 @@
 {
     "cmake.sourceDirectory": "${workspaceFolder}/GDExtension",
-    "cmake.buildDirectory": "${workspaceFolder}/GDExtension/build"
+    "cmake.buildDirectory": "${workspaceFolder}/GDExtension/build",
+    "godot_tools.editor_path": "/Users/egor/Documents/Programs/GameProd/Projects/NeckApp/project.godot"
 }

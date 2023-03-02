@@ -13,14 +13,14 @@ func _ready() -> void:
 		label.hide()
 	var tween: Tween = get_tree().create_tween()
 	digit_array[0].show()
-	tween.tween_property(digit_array[0], "scale", Vector2.ZERO, 1.0)
+	tween.tween_property(digit_array[0], "scale", Vector2.ZERO, 0.35)
 	await tween.finished
 	tween = get_tree().create_tween()
 	digit_array[1].show()
-	tween.tween_property(digit_array[1], "scale", Vector2.ZERO, 1.0)
+	tween.tween_property(digit_array[1], "scale", Vector2.ZERO, 0.35)
 	await tween.finished
 	tween = get_tree().create_tween()
 	digit_array[2].show()
-	tween.tween_property(digit_array[2], "scale", Vector2.ZERO, 1.0)
+	tween.tween_property(digit_array[2], "scale", Vector2.ZERO, 0.35)
 	await tween.finished
 	emit_signal("countdown_finished")

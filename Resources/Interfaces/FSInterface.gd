@@ -7,11 +7,8 @@ func _init():
 
 func save_settings() -> void:
 	var file := init_file("Settings.txt", FileAccess.WRITE)
-	file.store_8(int(GlobalSettings.is_sound_fx_enabled))
 	file.store_8(GlobalSettings.alternation_selected_value)
 	file.store_8(GlobalSettings.is_modern)
-	file.store_line(GlobalSettings.audio_output)
-	file.store_line(GlobalSettings.audio_input)
 	file.store_var(GlobalSettings.keys_selected_values, true)
 
 func load_settings() -> void:
@@ -19,11 +16,8 @@ func load_settings() -> void:
 	if file == null: return
 	if file.get_length() == 0:
 		return
-	GlobalSettings.is_sound_fx_enabled = file.get_8()
 	GlobalSettings.alternation_selected_value = file.get_8()
 	GlobalSettings.is_modern = file.get_8()
-	GlobalSettings.audio_output = file.get_line()
-	GlobalSettings.audio_input = file.get_line()
 	GlobalSettings.keys_selected_values = file.get_var(true)
 
 func save_rewards() -> void:

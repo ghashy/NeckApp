@@ -8,6 +8,7 @@ var is_settings_opened: bool = false
 # Onready variables
 @onready var toggle_settings: Button = $SettingsButton
 @onready var audio_graphic_layer: Control = $AudioGraphicLayer
+@onready var dummy: Node = $Dummy
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,6 +32,6 @@ func open_or_close_settings() -> void:
 		var settings_window: Control = \
 			load("res://Scenes/SettingsWindow/SettingsWindow.tscn").instantiate()
 		settings_window.name = "settings"
-		audio_graphic_layer.add_sibling(settings_window)
+		dummy.add_sibling(settings_window)
 		toggle_settings.set_text("BACK")
 	is_settings_opened = not is_settings_opened

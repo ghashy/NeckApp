@@ -16,7 +16,6 @@ var is_modern: bool
 func _ready() -> void:
 	set_process(false)
 	fs = FSIntervace.new()
-	init_settings()
 	init_dictionary_values()
 	fs.load_settings()
 
@@ -36,15 +35,6 @@ func init_dictionary_values() -> void:
 	keys_selected_values["D"] = false
 	keys_selected_values["D♯"] = false
 	keys_selected_values["Select ALL"] = false
-
-##------------------------------------------------------------------------------
-
-func init_settings() -> void:
-	is_sound_fx_enabled = true
-	audio_output = AudioServer.get_output_device()
-	audio_input = AudioServer.get_input_device()
-
-##------------------------------------------------------------------------------
 
 func save_settings() -> void:
 	fs.save_settings()

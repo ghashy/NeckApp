@@ -5,8 +5,6 @@ class_name Utils extends Node
 func _ready() -> void:
 	set_process(false)
 
-##------------------------------------------------------------------------------
-
 ## Transform selected keys to array, which can be read out by cpp.
 static func get_keys_for_cpp() -> Array[int]:
 	var from: Dictionary = GlobalSettings.keys_selected_values
@@ -38,8 +36,6 @@ static func get_keys_for_cpp() -> Array[int]:
 			result.push_back(11)  
 	return result
 
-##------------------------------------------------------------------------------
-
 static func get_alternation() -> int:
 	match GlobalSettings.alternation_selected_value:
 		0:
@@ -54,8 +50,6 @@ static func get_alternation() -> int:
 			return 100000 # I think it the same as 'NO ALTERNATION' :)
 		_:
 			return 1 # Can never happens.
-
-##------------------------------------------------------------------------------
 
 # Amature tonalities: C, C♯, D, D♯, E, F, F♯, G, G♯, A, B♭, B
 static func int_to_key_s(key: int) -> String:
