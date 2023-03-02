@@ -7,7 +7,6 @@ var is_settings_opened: bool = false
 
 # Onready variables
 @onready var toggle_settings: Button = $SettingsButton
-@onready var audio_graphic_layer: Control = $AudioGraphicLayer
 @onready var dummy: Node = $Dummy
 
 # Called when the node enters the scene tree for the first time.

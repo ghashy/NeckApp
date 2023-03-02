@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct0mmil2w588m"]
+[gd_scene load_steps=6 format=3 uid="uid://ct0mmil2w588m"]
 
 [ext_resource type="Theme" uid="uid://ltfmta4yx5om" path="res://Resources/Themes/GeneralTheme.tres" id="1_ixy3k"]
 [ext_resource type="Script" path="res://Resources/UIElements/ValuesLabel/ValuesLabel.gd" id="1_mcpkt"]
+[ext_resource type="Shader" path="res://Resources/Shaders/ValuesLabel.gdshader" id="3_7a58g"]
+[ext_resource type="Texture2D" uid="uid://dr7ihsf7qmx8" path="res://white.png" id="4_kbndy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1k1xm"]
+shader = ExtResource("3_7a58g")
+shader_parameter/amount = 3.54
 
 [node name="ValuesLabel" type="Control"]
 layout_mode = 3
@@ -11,6 +17,52 @@ anchor_right = 0.74
 anchor_bottom = 0.469
 theme = ExtResource("1_ixy3k")
 script = ExtResource("1_mcpkt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Shadow" type="HBoxContainer" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -34.24
+offset_right = 6.0
+offset_bottom = 46.2397
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="Label" parent="Shadow"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 165
+horizontal_alignment = 1
+
+[node name="Colon" type="Label" parent="Shadow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 165
+text = ":"
+horizontal_alignment = 1
+
+[node name="Right" type="Label" parent="Shadow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 165
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_1k1xm")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.938585
+anchor_bottom = 1.2232
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_kbndy")
 metadata/_edit_use_anchors_ = true
 
 [node name="HBox" type="HBoxContainer" parent="."]
