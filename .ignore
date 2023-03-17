@@ -1,0 +1,9 @@
+*.import
+project.godot
+*.svg
+*.tres
+*.png
+*.jpg
+*.drawio
+*.tscn
+GDExtension/
