@@ -22,5 +22,8 @@ func _ready() -> void:
 	tween = get_tree().create_tween()
 	digit_array[2].show()
 	tween.tween_property(digit_array[2], "scale", Vector2.ZERO, 0.35)
+	tween.parallel().tween_property(digit_array[2], "modulate", Color.TRANSPARENT, 0.35) \
+		.set_ease(Tween.EASE_OUT)
+	
 	await tween.finished
 	emit_signal("countdown_finished")

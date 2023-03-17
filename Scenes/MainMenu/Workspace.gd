@@ -19,8 +19,6 @@ var iter_max: int
 var iter_cur: int
 var cur_key_idx: int
 
-# MARK: - Onready variables
-
 @onready var start: Button = $StartButton
 @onready var to_next: Button = $ToNextButton
 @onready var finish: Button = $FinishButton
@@ -41,13 +39,13 @@ func connect_signals() -> void:
 	to_next.pressed.connect(handle_to_next_pressed)
 	finish.pressed.connect(execute_finish)
 
-# MARK: - exercise loop
+# EXERCISE LOOP
 
 func lets_countdown() -> void:
 	var child: Control = countdown.instantiate()
 	add_sibling(child)
 	await child.countdown_finished
-	get_parent().remove_child(child)
+	get_parent().call_deferred("remove_child", child)
 
 func prepare_ex_begin() -> void:
 	# Temp gui disabling
