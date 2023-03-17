@@ -11,15 +11,11 @@ var keys_selected_values: Dictionary = {}
 var alternation_selected_value: int
 var is_modern: bool
 
-##------------------------------------------------------------------------------
-
 func _ready() -> void:
 	set_process(false)
 	fs = FSIntervace.new()
 	init_dictionary_values()
 	fs.load_settings()
-
-##------------------------------------------------------------------------------
 
 func init_dictionary_values() -> void:
 	keys_selected_values["E"] = true
